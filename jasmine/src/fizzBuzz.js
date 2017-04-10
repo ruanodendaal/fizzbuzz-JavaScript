@@ -1,11 +1,18 @@
 function Fizzbuzz() {
 }
+
 Fizzbuzz.prototype.play = function(number){
-  if (number % 3 === 0 && number % 5 === 0) {
-    return 'Fizzbuzz'
-  } else if (number % 3 === 0) {
-    return 'Fizz'
-  } else if (number % 5 === 0) {
-    return 'Buzz'
+  if (this._isDivisibleBy(15, number)) {
+    return 'Fizzbuzz';
+  } else if (this._isDivisibleBy(3, number)) {
+    return 'Fizz';
+  } else if (this._isDivisibleBy(5, number)) {
+    return 'Buzz';
+  } else {
+    return number;
   }
+}
+
+Fizzbuzz.prototype._isDivisibleBy = function(divisor, number) {
+  return number % divisor === 0;
 }
