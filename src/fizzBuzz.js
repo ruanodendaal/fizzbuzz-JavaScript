@@ -1,4 +1,4 @@
-function Fizzbuzz() {
+var Fizzbuzz = function () {
 }
 
 Fizzbuzz.prototype.play = function(number){
@@ -15,4 +15,11 @@ Fizzbuzz.prototype.play = function(number){
 
 Fizzbuzz.prototype._isDivisibleBy = function(divisor, number) {
   return number % divisor === 0;
+}
+
+fizzbuzz = new Fizzbuzz();
+var limit = 100;
+for (var i = 1; i < limit; i++) {
+  fizzBuzz = fizzbuzz.play(i);
+  console.log(fizzBuzz);
 }
